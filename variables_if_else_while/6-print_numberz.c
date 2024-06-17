@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include <time.h>
+#include <unistd.h>
 #include <stdio.h>
 
 /**
@@ -13,7 +13,7 @@ int main(void)
 	
 	for (i = 0; i < 10; i++)
 	{
-		putchar(i);
+		write(i);
 	}
 	putchar('\n');
 	return (0);
