@@ -2,6 +2,9 @@
 
 /**
  * _islower - check if entry is lowercase or not
+ *
+ * @c - entry to check
+ *
  * Return: a number
 */
 
