@@ -1,6 +1,4 @@
-#include <stdlib.h>
-#include <time.h>
-#include <stdio.h>
+#include <main.h>
 
 /**
  * main - a program that prints _putchar, followed by a new line.
