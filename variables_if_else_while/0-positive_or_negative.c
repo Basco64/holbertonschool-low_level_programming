@@ -4,8 +4,8 @@
 
 
 /**
- * main - Prints if the rand num
- * is positive or negative
+ * main - Prints if the rand num is positive or negative
+ * Return: the good response
  */
 
 int main(void)
