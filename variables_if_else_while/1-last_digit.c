@@ -1,8 +1,11 @@
 #include <stdlib.h>
 #include <time.h>
-/* more headers goes there */
+#include <stdio.h>
 
-/* betty style doc for function main goes there */
+/* Prints the last
+ * digits of a random num
+*/
+
 int main(void)
 {
 	int n, ld;
