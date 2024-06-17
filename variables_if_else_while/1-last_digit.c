@@ -3,8 +3,8 @@
 #include <stdio.h>
 
 /*
- * Prints the last
- * digits of a random num
+ * Prints the last digits of a random num
+ * Return: the good response
 */
 
 int main(void)
