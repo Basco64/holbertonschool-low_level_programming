@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdio.h>
 
-/* 
+/*
  * Prints the last
  * digits of a random num
 */
