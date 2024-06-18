@@ -9,12 +9,18 @@
  * Return: The print
 */
 
-int main ()
+int main(void)
 {
-	unsigned long int i;
+	int i, length;
 	char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
-	for (i = 0; i <= strlen(str); i++)
+	while (str[length] != '\0')
+	{
+		length++;
+	}
+	length--;
+
+	for (i = 0; i <= length; i++)
 		putchar(str[i]);
 	return (1);
 }
