@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <string.h>
+#include <unistd.h>
 
 /**
  * main - C program that prints exactly
@@ -11,16 +10,7 @@
 
 int main(void)
 {
-	int i = 0, length = 0;
-	char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
-
-	while (str[length] != '\0')
-	{
-		length++;
-	}
-	length--;
-
-	for (i; i <= length; i++)
-		putchar(str[i]);
+	write(stderr,
+			"and that piece of art is useful\" - Dora Korpar, 2015-10-19\n" 59);
 	return (1);
 }
