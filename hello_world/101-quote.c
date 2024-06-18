@@ -14,7 +14,7 @@ int main ()
         int i;
         char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
 
-        for (i = 0; i < strlen(str); i++)
+        for (i = 0; i <= strlen(str); i++)
                 putchar(str[i]);
         return (1);
 }
