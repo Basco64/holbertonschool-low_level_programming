@@ -22,13 +22,12 @@ int main(void)
 					putchar(firstNum + '0');
 					putchar(secondNum + '0');
 					putchar(thirdNum + '0');
-					
 					if (firstNum != 7 || secondNum != 8 || thirdNum != 9)
 					{
 						putchar(',');
 						putchar(' ');
 					}
-				}		
+				}
 			}
 		}
 	}
