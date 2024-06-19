@@ -14,7 +14,7 @@ int main(void)
 	 * the return is no longer correct. long long forbidden
 	 */
 	int count = 3;
-	long first = 1, second = 2;
+	unsigned long first = 1, second = 2;
 	unsigned long next = first + second;
 
 	printf("%lu, %lu, ", first, second);
