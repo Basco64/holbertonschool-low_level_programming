@@ -9,16 +9,16 @@
 int main(void)
 {
 	int count = 3;
-	long long int first = 1, second = 2;
-	unsigned long long int next = first + second;
+	long int first = 1, second = 2;
+	unsigned long int next = first + second;
 
-	printf("%llu, %llu, ", first, second);
+	printf("%lu, %lu, ", first, second);
 	while (count <= 98)
 	{
 		if (count == 98)
-			printf("%llu\n", next);
+			printf("%lu\n", next);
 		else
-			printf("%llu, ", next);
+			printf("%lu, ", next);
 
 		first = second;
 		second = next;
