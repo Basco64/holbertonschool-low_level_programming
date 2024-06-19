@@ -16,9 +16,9 @@ int main(void)
 	while (count <= 98)
 	{
 		if (count == 98)
-			printf("%lu\n", next);
+			printf("%llu\n", next);
 		else
-			printf("%lu, ", next);
+			printf("%llu, ", next);
 
 		first = second;
 		second = next;
