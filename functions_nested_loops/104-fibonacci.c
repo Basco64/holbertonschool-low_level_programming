@@ -21,9 +21,14 @@ int main(void)
 	while (count < 99)
 	{
 		if (count == 98)
+		{
 			printf("%lu\n", next);
-		else
+			continue;
+		}
+		else if (next < 2147483648) 
 			printf("%lu, ", next);
+		else 
+			printf("%lu", sum % 10);
 
 		first = second;
 		second = next;
