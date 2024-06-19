@@ -20,6 +20,6 @@ int main(void)
 		second = next;
 		next = first + second;
 	}
-	printf("%lu\n", result + second);
+	printf("%lu\n", result);
 	return (0);
 }
