@@ -18,12 +18,11 @@ int main(void)
 	int count = 3;
 
 	printf("%lu, %lu, ", first, second);
-	while (count < 99)
+	while (count <= 98)
 	{
 		if (count == 98)
 		{
 			printf("%lu\n", next);
-			continue;
 		}
 		else
 			printf("%lu, ", next);
