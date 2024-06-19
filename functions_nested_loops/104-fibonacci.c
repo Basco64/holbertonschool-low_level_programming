@@ -8,6 +8,11 @@
 
 int main(void)
 {
+	/**
+	 * This code is incomplete, problem:
+	 * once you exceed the value of an unsigned long,
+	 * the return is no longer correct. long long forbidden
+	 */
 	int count = 3;
 	long first = 1, second = 2;
 	unsigned long next = first + second;
