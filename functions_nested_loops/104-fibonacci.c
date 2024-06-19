@@ -25,10 +25,8 @@ int main(void)
 			printf("%lu\n", next);
 			continue;
 		}
-		else if (next < 1844674407370955100) 
+		else
 			printf("%lu, ", next);
-		else 
-			printf("%lu", next % 10);
 
 		first = second;
 		second = next;
