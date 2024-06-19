@@ -8,7 +8,8 @@
 
 int main(void)
 {
-	long int result = 0, first = 1, second = 2;
+	/* result = 2 for count second in the loop*/
+	long int result = 2, first = 1, second = 2;
 	long int next = first + second;
 
 	while (next < 4000001)
