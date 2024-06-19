@@ -13,11 +13,13 @@ int main(void)
 
 	while (next < 4000001)
 	{
-		printf("%lu, ", next);
+		if (next % 2 == 0)
+			printf("%lu, ", next);
+
 		first = second;
 		second = next;
 		next = first + second;
 	}
-	printf("%lu\n", second);
+	(second % 2 == 0) && printf("%lu\n", second);
 	return (0);
 }
