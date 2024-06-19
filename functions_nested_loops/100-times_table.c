@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * times_table -  that prints the n times table, starting with 0
+ * print_times_table -  that prints the n times table, starting with 0
  *
  * @n: the input
  *
@@ -13,7 +13,7 @@ void print_times_table(int n)
 	int i, multiplier, result;
 
 	if (n > 15 || n < 0)
-		return ;
+		return;
 
 	for (i = 0; i <= n; i++)
 	{
@@ -22,7 +22,6 @@ void print_times_table(int n)
 			result = i * multiplier;
 			if (multiplier == 0)
 				_putchar('0');
-
 			else if (result < 10 && multiplier != 0)
 			{
 				_putchar(',');
@@ -31,7 +30,6 @@ void print_times_table(int n)
 				_putchar(' ');
 				_putchar(result + '0');
 			}
-
 			else if (result >= 10 && result < 100)
 			{
 				_putchar(',');
@@ -40,7 +38,6 @@ void print_times_table(int n)
 				_putchar((result / 10) + '0');
 				_putchar((result % 10) + '0');
 			}
-
 			else if (result >= 100)
 			{
 				_putchar(',');
