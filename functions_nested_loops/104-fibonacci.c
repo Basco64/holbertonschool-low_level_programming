@@ -10,8 +10,8 @@ int main(void)
 {
 	int count = 3;
 	long int first = 1, second = 2;
-	long int next = first + second;
-	
+	unsigned long int next = first + second;
+
 	printf("%lu, %lu, ", first, second);
 	while (count <= 98)
 	{
@@ -19,7 +19,7 @@ int main(void)
 			printf("%lu\n", next);
 		else
 			printf("%lu, ", next);
-		
+
 		first = second;
 		second = next;
 		next = first + second;
