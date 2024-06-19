@@ -28,7 +28,7 @@ int main(void)
 		else if (next < 2147483648) 
 			printf("%lu, ", next);
 		else 
-			printf("%lu", sum % 10);
+			printf("%lu", next % 10);
 
 		first = second;
 		second = next;
