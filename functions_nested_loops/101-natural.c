@@ -7,7 +7,7 @@
  * Return: The addition of all the multiples
 */
 
-void main(void)
+int main(void)
 {
 	int i;
 	unsigned long result = 0;
@@ -20,4 +20,5 @@ void main(void)
 		}
 	}
 	printf("%lu\n", result);
+	return (0);
 }
