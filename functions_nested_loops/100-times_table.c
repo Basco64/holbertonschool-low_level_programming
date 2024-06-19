@@ -17,7 +17,7 @@ void print_times_table(int n)
 
 	for (i = 0; i <= n; i++)
 	{
-		for (multiplier = 0; multiplier <= 9 ; multiplier++)
+		for (multiplier = 0; multiplier <= n ; multiplier++)
 		{
 			result = i * multiplier;
 			if (multiplier == 0)
