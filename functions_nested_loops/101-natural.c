@@ -19,5 +19,5 @@ void main(void)
 			result += i;
 		}
 	}
-	printf("%ul\n", result);
+	printf("%lu\n", result);
 }
