@@ -9,7 +9,8 @@
 
 void main(void)
 {
-	int i, result;
+	int i;
+	unsigned long result = 0;
 
 	for (i = 0; i < 1024; i++)
 	{
@@ -18,5 +19,5 @@ void main(void)
 			result += i;
 		}
 	}
-	printf("%l\n", result);
+	printf("%ul\n", result);
 }
