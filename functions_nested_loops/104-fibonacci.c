@@ -8,28 +8,39 @@
 
 int main(void)
 {
-	/**
-	 * This code is incomplete, problem:
-	 * once you exceed the value of an unsigned long,
-	 * the return is no longer correct. long long forbidden
-	 */
-	unsigned long first = 1, second = 2;
-	unsigned long next = first + second;
+	unsigned long first_start = 1, first_end = 0;
+	unsigned long second_start = 2, second_end = 0;
+	unsigned long next_start = first_start + second_start, next_end = 0;
+	unsigned long overflow = 1000000000;
 	int count = 3;
 
-	printf("%lu, %lu, ", first, second);
+	printf("%lu, %lu, ", first_start, second_start);
 	while (count <= 98)
 	{
-		if (count == 98)
+		if (next_start >= overflow)
 		{
-			printf("%lu\n", next);
+			next_start -= overflow;
+			next_end += 1;
 		}
+		if (count == 98)
+			printf("%lu%09lu\n", next_end, next_start);
 		else
-			printf("%lu, ", next);
+		{
+			if (next_end > 0)
+				printf("%lu%09lu, ", next_end, next_start);
+			else
+				printf("%lu, ", next_start);
+		}
 
-		first = second;
-		second = next;
-		next = first + second;
+		first_start = second_start;
+		first_end = second_end;
+
+		second_start = next_start;
+		second_end = next_end;
+
+		next_start = first_start + second_start;
+		next_end = first_end + second_end;
+
 		count++;
 	}
 	return (0);
