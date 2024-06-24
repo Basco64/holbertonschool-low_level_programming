@@ -3,7 +3,7 @@
 /**
  * reset_to_98 - Prints the alphabet in lowercase
  *
- * @*n: pointer to n
+ * @n: pointer to n
  *
  * Return: The reset of 'n'
 */
