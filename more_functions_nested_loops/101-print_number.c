@@ -11,10 +11,14 @@
 
 void print_number(int n)
 {
-	int u, d;
+	int d, u;
 
 	if (n < 0)
+	{
 		_putchar('-');
+		u *= -1;
+	} else
+		u = n;
 
 	d = 100000;
 
