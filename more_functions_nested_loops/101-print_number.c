@@ -17,7 +17,7 @@ void print_number(int n)
 		_putchar('-');
 
 	d = 100000
-		
+
 	while (i > 0)
 	{
 		if (i <= u || i == 1)
