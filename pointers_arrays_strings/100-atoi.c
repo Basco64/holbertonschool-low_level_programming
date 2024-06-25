@@ -10,23 +10,31 @@
 
 int _atoi(char *s)
 {
-	int i;
+	int i, result = 0, sign = -1, exist = 0;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
+		if (s[i] == '-')
+			sign *= -1;
+
 		if (s[i] >= '0' && s[i] <= '9')
 		{
-			if (s[i - 1] == '-')
-				_putchar('-');
+			exist = 1;
 
-			if (s[i - 1] == '+')
-				_putchar('+');
-
-			_putchar(s[i] + '0');
+			if (result < 0)
+				result = (result * 10) - (s[i] - '0');
+			else
+				result = (s[i] - '0') * -1;
 
 			if (s[i + 1] < '0' && s[i + 1] > '9')
 				break;
 		}
 	}
-	return (0);
+
+	if (exist == 0)
+		return (0);
+	if (sign < 0)
+		result *= -1;
+
+	return (result);
 }
