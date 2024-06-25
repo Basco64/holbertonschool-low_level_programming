@@ -20,7 +20,7 @@ void print_number(int n)
 	} else
 		u = n;
 
-	d = 10000000000;
+	d = 1410065408;
 
 	while (d > 0)
 	{
