@@ -19,7 +19,7 @@ char *_strncat(char *dest, char *src, int n)
         while (src[len2] != '\0')
                 len2++;
 
-	if len2 > n
+	if (len2 > n)
 		cut = n;
 	else
 		cut = len2;
