@@ -10,7 +10,7 @@
 
 void print_number(int n)
 {
-	unsigned int d, u;
+	unsigned int u, d = 1000000;
 	
 	if (n == 0)
 		_putchar('0');
