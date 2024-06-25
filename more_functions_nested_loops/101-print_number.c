@@ -16,12 +16,12 @@ void print_number(int n)
 	if (n < 0)
 		_putchar('-');
 
-	d = 100000
+	d = 100000;
 
-	while (i > 0)
+	while (d > 0)
 	{
-		if (i <= u || i == 1)
-			_putchar(u / i % 10 + '0');
-		i /= 10;
+		if (d <= u || d == 1)
+			_putchar(u / d % 10 + '0');
+		d /= 10;
 	}
 }
