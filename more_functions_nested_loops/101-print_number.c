@@ -28,7 +28,7 @@ void print_number(int n)
 
 		while (d > 0)
 		{
-			_putchar(u / d % 10 + '0');
+			_putchar((u / d) % 10 + '0');
 			d /= 10;
 		}
 	}
