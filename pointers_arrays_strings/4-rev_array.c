@@ -11,7 +11,7 @@
 
 void reverse_array(int *a, int n)
 {
-	int len = 0, i;
+	int len = 0, i, tmp;
 
 	while (a[len] != '\0')
 		len++;
