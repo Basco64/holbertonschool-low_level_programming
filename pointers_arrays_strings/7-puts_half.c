@@ -1,0 +1,20 @@
+#include "main.h"
+
+/**
+ * puts_half - Function that prints half of a string
+ *
+ * Return: the half of the string
+*/
+
+void puts_half(char *str)
+{
+	int len = 0, i;
+	char tmp;
+
+	while (s[len] != '\0')
+		len++;
+
+	for (i = (len - 1) / 2 ; i < len - 1; i++)
+		_putchar(str[i]);
+	_putchar('\0');
+}
