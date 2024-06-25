@@ -10,8 +10,8 @@
 
 void print_number(int n)
 {
-	unsigned int u, d = 1000000;
-	
+	unsigned int u, d = 1000000000;
+
 	if (n == 0)
 		_putchar('0');
 	else
@@ -23,13 +23,12 @@ void print_number(int n)
 		} else
 			u = n;
 
-		while (u / d >= 10)
-			d *= 10;
-
-		while (d > 0)
+		while (d != 0)
 		{
-			_putchar((u / d) % 10 + '0');
+			if (d <= u || d == 1)
+				_putchar(u / d % 10 + '0');
 			d /= 10;
 		}
+
 	}
 }
