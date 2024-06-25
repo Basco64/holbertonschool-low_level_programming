@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * _puts2 - Function that prints every other character of a string, starting with the first character
+ * puts2 - Function that prints every other character of a string, starting with the first character
  *
  * @str: pointer of a string
  *
  * Return: The string
 */
 
-void _puts2(char *str)
+void puts2(char *str)
 {
         int i;
 
