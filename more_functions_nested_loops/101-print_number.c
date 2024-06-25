@@ -19,7 +19,8 @@ void print_number(int n)
 	} else
 		u = n;
 
-	d = 1410065408;
+	while (u / d >= 10)
+		d *= 10;
 
 	while (d > 0)
 	{
