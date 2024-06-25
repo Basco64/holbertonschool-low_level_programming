@@ -10,20 +10,20 @@
 
 int _atoi(char *s)
 {
-	int len = 0, i;
+	int i;
 
-	while (s[len] != '\0')
-		len++;
-
-	for (i = 0; i < len; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[i] > '0' && s[i] < '9')
+		if (s[i] >= '0' && s[i] <= '9')
 		{
 			if (s[i - 1] == '-')
 				_putchar('-');
+
 			if (s[i - 1] == '+')
 				_putchar('+');
+
 			_putchar(s[i] + '0');
+
 			if (s[i + 1] < '0' && s[i + 1] > '9')
 				break;
 		}
