@@ -18,7 +18,7 @@ char *rot13(char *str)
 		for (j = 0; j < 52; j++)
 		{
 			if (str[i] == arr[j])
-				str[i] += 13;
+				str[i] -= 13;
 		}
 	}
 	return (str);
