@@ -22,7 +22,7 @@ char *leet(char *str)
 		for (j = 0; i < 10; j++)
 		{
 			if (str[i] == arr1[j])
-				str[i] = arr2[j]
+				str[i] = arr2[j];
 		}
 	}
 	return (str);
