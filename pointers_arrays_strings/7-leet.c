@@ -10,23 +10,20 @@
 
 char *leet(char *str)
 {
-	int i, len = 0;
+	int i, j, len = 0;
+	char arr1[] = "aAeEoOtTlL";
+	char arr2[] = "4433007711";
 
 	while (str[len] != '\0')
 		len++;
 
 	for (i = 0; i < len; i++)
 	{
-		if (str[i] == 65 || str[i] == 97)
-			str[i] = 4;
-		if (str[i] == 69 || str[i] == 101)
-			str[i] = 3;
-		if (str[i] == 79 || str[i] == 111)
-			str[i] = 0;
-		if (str[i] == 84 || str[i] == 116)
-			str[i] = 7;
-		if (str[i] == 76 || str[i] == 108)
-			str[i] = 1;
+		for (j = 0; i < 10; j++)
+		{
+			if (str[i] == arr1[j])
+				str[i] = arr2[j]
+		}
 	}
 	return (str);
 }
