@@ -33,7 +33,8 @@ char *cap_string(char *str)
 				str[i] == '{' ||
 				str[i] == '}' ||
 				str[i] == '\t' ||
-				str[i] == '\n' ||)
+				str[i] == '\n'
+				)
 		{
 			if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
 			{
