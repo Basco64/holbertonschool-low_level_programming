@@ -11,14 +11,15 @@
 char *rot13(char *str)
 {
 	int i, j;
-	char arr[] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
+	char arr1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char arr2[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		for (j = 0; j < 52; j++)
 		{
-			if (str[i] == arr[j])
-				str[i] -= 13;
+			if (str[i] == arr1[j])
+				str[i] = arr2[j];
 		}
 	}
 	return (str);
