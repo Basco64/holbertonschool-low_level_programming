@@ -10,14 +10,11 @@
 
 char *leet(char *str)
 {
-	int i, j, len = 0;
+	int i, j;
 	char arr1[] = "aAeEoOtTlL";
 	char arr2[] = "4433007711";
 
-	while (str[len] != '\0')
-		len++;
-
-	for (i = 0; i < len; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		for (j = 0; i < 10; j++)
 		{
