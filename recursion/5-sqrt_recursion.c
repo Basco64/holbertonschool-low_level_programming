@@ -5,7 +5,7 @@ int find_sqrt(int n, int sqrt) {
 		return (sqrt);
 	if (sqrt * sqrt > n)
 		return (-1);
-	return find_sqrt(n, guess + 1);
+	return find_sqrt(n, sqrt + 1);
 }
 
 /**
