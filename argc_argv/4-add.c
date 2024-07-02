@@ -2,19 +2,19 @@
 #include <stdio.h>
 
 /**
- * main -
+ * main - Adds positive number in argument
  *
- * @argc: Number of argument in 'argv'
- * @argv: Array of argument
+ * @argc: Argument count
+ * @argv: Arguments Values (Array of String)
  *
  * Return: 0
 */
 
 int main(int argc, char **argv)
 {
-	int i, result = 0;
+	int i, j, result = 0;
 
-	if (argc == 0)
+	if (argc == 1)
 	{
 		printf("0\n");
 		return (0);
@@ -22,13 +22,18 @@ int main(int argc, char **argv)
 
 	for (i = 1; i < argc; i++)
 	{
-		if (*argv[i] < '0' && *argv[i] > '9')
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			printf("Error\n");
-			return (1);
-		} else
-			result += atoi(argv[i]);
+			if (argv[i][j] < '0' || argv[i][j] > '9')
+			{
+				printf("Error\n");
+				return (1);
+			}
+		}
+
+		result += atoi(argv[i]);
 	}
+
 	printf("%d\n", result);
 	return (0);
 }
