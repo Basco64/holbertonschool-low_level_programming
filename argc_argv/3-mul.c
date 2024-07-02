@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * main - Multiplies two number 
+ * main - Multiplies two numbers
  *
  * @argc: Number of argument in 'argv'
  * @argv: Arguments Values (Array of String)
