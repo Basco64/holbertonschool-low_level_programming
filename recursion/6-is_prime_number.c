@@ -22,7 +22,7 @@ int is_prime_test(int n, int div)
 
 /**
  * is_prime_number - Function that returns 1 if the
- * 	input integer is a prime number
+ * input integer is a prime number
  *
  * @n: The number
  *
