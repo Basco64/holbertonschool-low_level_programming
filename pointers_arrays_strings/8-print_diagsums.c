@@ -14,7 +14,7 @@
 void print_diagsums(int *a, int size)
 {
 	long int cross1 = 0, cross2 = 0;
-	int i, j;
+	int i;
 
 	for (i = 0; i < size; i++)
 	{
