@@ -10,7 +10,7 @@
  * Return: A pointer to an array of strings (words)
 */
 
-char **strtow(char *s)
+char **strtow(char *str)
 {
 	char **args;
 	int i, j = 0, arguc = 0, length = 0, start = 0;
