@@ -16,10 +16,14 @@ char **strtow(char *str)
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
+
+	if (*str == ' ' && *(str + 1) == '\0')
+		return NULL;
+
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
-			arguc++;
+				arguc++;
 	}
 	args = malloc((arguc + 1) * sizeof(char *));
 	if (args == NULL)
