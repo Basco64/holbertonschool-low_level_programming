@@ -32,6 +32,9 @@ int printcequejetedis(const char *str, ...)
 					break;
 				}
 			}
+			
+			if (specifiers[j].letter == '\0')
+				printcequejetedis("Not implemented yet");
 		} else
 			putchar(str[i]);
 		count++;

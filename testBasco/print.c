@@ -3,6 +3,8 @@
 
 specifierType specifiers[] = {
 	{'d', print_int},
+	{'u', print_int},
+	{'i', print_int},
 	{'c', print_char},
 	{'s', print_string},
 	{'\0', NULL}
