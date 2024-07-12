@@ -2,6 +2,29 @@
 #include <stdlib.h>
 
 /**
+ * count_words - Function that count words in the string
+ *
+ * @str: The input string
+ *
+ * Return: The number of words in the string
+ */
+
+int count_words(char *str)
+{
+	int i, word_count = 0;
+
+	if (str == NULL || *str == '\0')
+		return (0);
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
+			word_count++;
+	}
+	return (word_count);
+}
+
+/**
  * strtow - Function that splits a string into words
  *
  * @str: The input string
@@ -12,24 +35,14 @@
 char **strtow(char *str)
 {
 	char **args;
-	int i, k, j = 0, arguc = 0, length = 0, start = 0;
+	int i, k, j = 0, length = 0, start = 0;
+	int word_count = count_words(str);
 
-	if (str == NULL || *str == '\0')
+	if (word_count == 0)
 		return (NULL);
-
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
-				arguc++;
-	}
-
-	if (arguc == 0)
-		return (NULL);
-
-	args = malloc((arguc + 1) * sizeof(char *));
+	args = malloc((word_count + 1) * sizeof(char *));
 	if (args == NULL)
 		return (NULL);
-
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] != ' ')
@@ -70,7 +83,6 @@ char **strtow(char *str)
 		args[j][length] = '\0';
 		j++;
 	}
-
 	args[j] = NULL;
 	return (args);
 }
