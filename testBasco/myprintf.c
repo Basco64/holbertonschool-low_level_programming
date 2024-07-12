@@ -12,14 +12,13 @@
  * Return: 0
 */
 
-void printcequejetedis(const char *str, ...)
+int printcequejetedis(const char *str, ...)
 {
-	int i, d, c;
+	int i, d, c, count = 0;
 	char *s;
 	va_list args;
 
 	va_start(args, str);
-
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == '%' && str[i + 1] != '\0')
@@ -52,7 +51,8 @@ void printcequejetedis(const char *str, ...)
 			}
 		} else
 			putchar(str[i]);
+		count++;
 	}
-	putchar('\n');
 	va_end(args);
+	return (count);
 }
