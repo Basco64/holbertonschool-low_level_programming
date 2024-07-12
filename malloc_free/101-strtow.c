@@ -17,17 +17,19 @@ char **strtow(char *str)
 	if (str == NULL || *str == '\0')
 		return (NULL);
 
-	if (*str == ' ' && *(str + 1) == '\0')
-		return NULL;
-
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
 				arguc++;
 	}
+
+	if (arguc == 0)
+		return (NULL);
+
 	args = malloc((arguc + 1) * sizeof(char *));
 	if (args == NULL)
 		return (NULL);
+
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] != ' ')
@@ -68,6 +70,7 @@ char **strtow(char *str)
 		args[j][length] = '\0';
 		j++;
 	}
+
 	args[j] = NULL;
 	return (args);
 }
