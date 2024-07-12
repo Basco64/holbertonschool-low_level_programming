@@ -14,40 +14,23 @@
 
 int printcequejetedis(const char *str, ...)
 {
-	int i, d, c, count = 0;
-	char *s;
+	int i, j, count = 0;
 	va_list args;
 
 	va_start(args, str);
+
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == '%' && str[i + 1] != '\0')
 		{
 			i++;
-			switch (str[i])
+			for (j = 0; specifiers[j].letter != '\0'; j++)
 			{
-				case 'd':
-					{
-						d = va_arg(args, int);
-						print_int(d);
-						break;
-					}
-				case 'c':
-					{
-						c = va_arg(args, int);
-						putchar(c);
-						break;
-					}
-				case 's':
-					{
-						s = va_arg(args, char*);
-						print_string(s);
-						break;
-					}
-				default:
-					{
-						printf("Pas encore implementé !");
-					}
+				if (str[i] == specifiers[j].letter)
+				{
+					specifiers[j].function(args);
+					break;
+				}
 			}
 		} else
 			putchar(str[i]);

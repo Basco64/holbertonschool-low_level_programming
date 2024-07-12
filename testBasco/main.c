@@ -16,7 +16,8 @@ int main(void)
 	char maju = 'A';
 
 	printcequejetedis("Je vais manger %d %s.\n", num, article);
-	printcequejetedis("La lettre %c est la première lettre de l'alphabet, elle existe aussi en majuscle: %c .\n", minu, maju);
+	printcequejetedis("La lettre %c est la première lettre de l'alphabt", minu);
+	printcequejetedis(", elle existe aussi en mmajuscule : %c .\n", maju);
 
 	return (0);
 }

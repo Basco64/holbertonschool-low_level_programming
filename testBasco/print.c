@@ -1,16 +1,24 @@
 #include "main.h"
 #include <stdio.h>
 
+specifierType specifiers[] = {
+	{'d', print_int},
+	{'c', print_char},
+	{'s', print_string},
+	{'\0', NULL}
+};
+
 /**
  * print_int - Print the numbers
  *
- * @num : The number
+ * @args: The arguments
  *
  * Return: Void
  */
 
-void print_int(int num)
+void print_int(va_list args)
 {
+	int num = va_arg(args, int);
 	int rev = 0, count = 0;
 
 	if (num == 0)
@@ -49,13 +57,30 @@ void print_int(int num)
 /**
  * print_string - Print the string
  *
- * @str: The string
+ * @args: The arguments
  *
  * Return: Void
  */
 
-void print_string(const char *str)
+void print_string(va_list args)
 {
+	char *str = va_arg(args, char*);
+
 	while (*str)
 		putchar(*str++);
+}
+
+/**
+ * print_char - Print the char
+ *
+ * @args: The arguments
+ *
+ * Return: Void
+ */
+
+void print_char(va_list args)
+{
+	int c = va_arg(args, int);
+
+	putchar(c);
 }
