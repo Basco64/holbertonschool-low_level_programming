@@ -25,6 +25,32 @@ int count_words(char *str)
 }
 
 /**
+ * extract_word - Function that extract the words
+ *
+ * @str: The input string
+ * @start: start of the word
+ * @len: length of the word
+ *
+ * Return: The word
+ */
+
+char *extract_word(char *str, int start, int len)
+{
+	char *word;
+	int i;
+
+	word = malloc((len + 1) * sizeof(char));
+	if (word == NULL)
+		return (NULL);
+
+	for (i = 0; i < len; i++)
+		word[i] = str[start + i];
+	word[len] = '\0';
+
+	return (word);
+}
+
+/**
  * strtow - Function that splits a string into words
  *
  * @str: The input string
@@ -53,7 +79,7 @@ char **strtow(char *str)
 		}
 		else if (length > 0)
 		{
-			args[j] = malloc((length + 1) * sizeof(char));
+			args[j] = extract_word(str, start, length);
 			if (args[j] == NULL)
 			{
 				for (k = 0; k < j; k++)
@@ -61,16 +87,13 @@ char **strtow(char *str)
 				free(args);
 				return (NULL);
 			}
-			for (k = 0; k < length; k++)
-				args[j][k] = str[start + k];
-			args[j][length] = '\0';
 			j++;
 			length = 0;
 		}
 	}
 	if (length > 0)
 	{
-		args[j] = malloc((length + 1) * sizeof(char));
+		args[j] = extract_word(str, start, length);
 		if (args[j] == NULL)
 		{
 			for (k = 0; k < j; k++)
@@ -78,9 +101,6 @@ char **strtow(char *str)
 			free(args);
 			return (NULL);
 		}
-		for (k = 0; k < length; k++)
-			args[j][k] = str[start + k];
-		args[j][length] = '\0';
 		j++;
 	}
 	args[j] = NULL;
