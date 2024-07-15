@@ -33,9 +33,9 @@ int main(int argc, char *argv[])
 
 		if (arg - 1 > i)
 			printf(" ");
+		else
+			printf("\n");
 	}
-
-	printf("\n");
 
 	return (0);
 }
