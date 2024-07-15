@@ -1,5 +1,5 @@
 #include "3-calc.h"
-#include <stdde.h>
+#include <stddef.h>
 
 /**
  * get_op_func - Function that select the good operation
