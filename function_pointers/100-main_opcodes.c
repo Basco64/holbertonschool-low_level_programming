@@ -29,6 +29,11 @@ int main(int argc, char *argv[])
 
 	for (i = 0; i < arg; i++)
 	{
+		/**
+		 * "%02hhx": Format hexa sur 2 chiffres
+		 * "*((char *)main + i)": Pointe vers 'main' et accede au 'i'ème octe
+		 */
+
 		printf("%02hhx", *((char *)main + i));
 
 		if (arg - 1 > i)
