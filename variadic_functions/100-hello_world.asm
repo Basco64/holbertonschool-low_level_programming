@@ -1,10 +1,8 @@
-# Not mine, just take on https://jameshfisher.com/2018/03/10/linux-assembly-hello-world/
-
-global _start
+global main
 
 section .text
 
-_start:
+main:
   mov rax, 1        ; write(
   mov rdi, 1        ;   STDOUT_FILENO,
   mov rsi, msg      ;   "Hello, world!\n",
