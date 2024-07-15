@@ -3,15 +3,15 @@ global main
 section .text
 
 main:
-  mov rax, 1        ; write(
-  mov rdi, 1        ;   STDOUT_FILENO,
-  mov rsi, msg      ;   "Hello, world!\n",
-  mov rdx, msglen   ;   sizeof("Hello, world!\n")
-  syscall           ; );
+  mov rax, 1
+  mov rdi, 1
+  mov rsi, msg
+  mov rdx, msglen
+  syscall
 
-  mov rax, 60       ; exit(
-  mov rdi, 0        ;   EXIT_SUCCESS
-  syscall           ; );
+  mov rax, 60
+  mov rdi, 0
+  syscall
 
 section .rodata
   msg: db "Hello, world!", 10
