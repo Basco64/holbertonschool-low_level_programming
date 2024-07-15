@@ -1,4 +1,4 @@
-;Not mine, just take on https://jameshfisher.com/2018/03/10/linux-assembly-hello-world/
+# Not mine, just take on https://jameshfisher.com/2018/03/10/linux-assembly-hello-world/
 
 global _start
 
