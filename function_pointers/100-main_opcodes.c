@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	{
 		printf("%02hhx", *((char *)main + i));
 
-		if (arg > i)
+		if (arg - 1 > i)
 			printf(" ");
 	}
 
