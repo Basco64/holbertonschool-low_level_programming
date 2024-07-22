@@ -18,10 +18,15 @@ int _printf(const char *format, ...)
 	int i, j, k = 0, count = 0, len = 0;
 	va_list args;
 
-	while (format)
+	while (format[len])
 		len++;
 
+	len++;
+
 	result = malloc(len);
+
+	if (result == NULL)
+		return (0);
 
 	va_start(args, format);
 
