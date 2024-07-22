@@ -4,41 +4,50 @@
 #include <stdarg.h>
 
 /**
- * printcequejetedis - My printf
+ * _printf - My printf
  *
- * @str: The string
+ * @format: Pointer to the formated string
  * @...: Number of arguments undefined
  *
  * Return: 0
 */
 
-int printcequejetedis(const char *str, ...)
+int _printf(const char *format, ...)
 {
-	int i, j, count = 0;
+	char *result;
+	int i, j, k = 0, count = 0, len = 0;
 	va_list args;
 
-	va_start(args, str);
+	while (format)
+		len++;
 
-	for (i = 0; str[i] != '\0'; i++)
+	result = malloc(len);
+
+	va_start(args, format);
+
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (str[i] == '%' && str[i + 1] != '\0')
+		if (format[i] == '%' && format[i + 1] != '\0')
 		{
 			i++;
 			for (j = 0; specifiers[j].letter != '\0'; j++)
 			{
-				if (str[i] == specifiers[j].letter)
+				if (format[i] == specifiers[j].letter)
 				{
-					specifiers[j].function(args);
+					specifiers[j].function(args, result, &k);
 					break;
 				}
 			}
 			
 			if (specifiers[j].letter == '\0')
-				printcequejetedis("Not implemented yet");
+				_printf("Not implemented yet");
 		} else
-			putchar(str[i]);
-		count++;
+			result[k] = format[i];
+		k++;
 	}
 	va_end(args);
+
+	write(1, result, len);
+	free(result);
 	return (count);
 }

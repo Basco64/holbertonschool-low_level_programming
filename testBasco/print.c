@@ -18,20 +18,21 @@ specifierType specifiers[] = {
  * Return: Void
  */
 
-void print_int(va_list args)
+void print_int(va_list args, char *str, int *index)
 {
 	int num = va_arg(args, int);
 	int rev = 0, count = 0;
 
 	if (num == 0)
 	{
-		putchar('0');
+		str[*index] = '0';
 		return;
 	}
 
 	if (num < 0)
 	{
-		putchar('-');
+		str[*index] = '-';
+		index++;
 		num = -num;
 	}
 
@@ -44,14 +45,14 @@ void print_int(va_list args)
 
 	while (rev != 0)
 	{
-		putchar((rev % 10) + '0');
+		str[*index] = (rev % 10) + '0';
 		rev /= 10;
 		count--;
 	}
 
 	while (count > 0)
 	{
-		putchar('0');
+		str[*index] = '0';
 		count--;
 	}
 }
@@ -64,12 +65,15 @@ void print_int(va_list args)
  * Return: Void
  */
 
-void print_string(va_list args)
+void print_string(va_list args, char *str, int *index)
 {
-	char *str = va_arg(args, char*);
+	char *string = va_arg(args, char*);
 
-	while (*str)
-		putchar(*str++);
+	while (*string)
+	{
+		str[*index] = *string;
+		index++;
+	}
 }
 
 /**
@@ -80,9 +84,9 @@ void print_string(va_list args)
  * Return: Void
  */
 
-void print_char(va_list args)
+void print_char(va_list args, char *str, int *index)
 {
 	int c = va_arg(args, int);
 
-	putchar(c);
+	str[*index] = c;
 }
