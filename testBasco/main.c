@@ -62,5 +62,11 @@ int main(void)
 	_printf("Unknown:[%r]\n");
 	printf("Unknown:[%r]\n");
 
+
+	len = _printf("%s dc 15", article);
+	len2 = printf("%s dc 15", article);
+
+	printf("\nlen = %d, len2 = %d", len, len2);
+
 	return (0);
 }

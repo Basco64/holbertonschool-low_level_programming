@@ -10,7 +10,7 @@
 
 void print_address(va_list args)
 {
-        void *addr = va_arg(args, void*);
+	void *addr = va_arg(args, void*);
 	unsigned long address = (unsigned long)addr;
 	unsigned long int divisor = 1, hexa;
 
@@ -19,7 +19,7 @@ void print_address(va_list args)
 		_putchar('0');
 		return;
 	}
-	
+
 	while (address / divisor >= 16)
 		divisor *= 16;
 
@@ -30,7 +30,7 @@ void print_address(va_list args)
 	while (divisor > 0)
 	{
 		hexa = (address / divisor) % 16;
-		
+
 		if (hexa < 10)
 			_putchar(hexa + '0');
 		else
