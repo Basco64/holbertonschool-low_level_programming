@@ -14,8 +14,7 @@
 
 int _printf(const char *format, ...)
 {
-	char *result;
-	int i, j, k = 0, count = 0, len = 0;
+	int i, j, count = 0;
 	va_list args;
 
 	va_start(args, format);
@@ -28,20 +27,20 @@ int _printf(const char *format, ...)
 			{
 				if (format[i] == specifiers[j].letter)
 				{
-					specifiers[j].function(args, result, &k);
+					specifiers[j].function(args);
 					break;
 				}
 			}
 			
 			if (specifiers[j].letter == '\0')
-				_printf("Not implemented yet");
+			{
+				_putchar('%');
+				_putchar(format[i]);
+			}
 		} else
 			_putchar(format[i]);
 		count++;
 	}
 	va_end(args);
-
-	write(1, result, len);
-	free(result);
 	return (count);
 }

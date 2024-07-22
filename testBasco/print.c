@@ -1,13 +1,18 @@
 #include "main.h"
 #include <stdio.h>
 
+
+/*
+ * x X o p
+*/
+
 specifierType specifiers[] = {
 	{'d', print_int},
-	{'u', print_int},
+	{'u', print_unsigned_int},
 	{'i', print_int},
 	{'c', print_char},
 	{'s', print_string},
-	{'%', print_char},
+	{'%', print_percent},
 	{'\0', NULL}
 };
 
@@ -32,7 +37,7 @@ int _putchar(char c)
  * Return: Void
  */
 
-void print_int(va_list args, char *str, int *index)
+void print_int(va_list args)
 {
 	int num = va_arg(args, int);
 	int rev = 0, count = 0;
@@ -71,6 +76,46 @@ void print_int(va_list args, char *str, int *index)
 }
 
 /**
+ * print_int - Print the numbers
+ *
+ * @args: The arguments
+ *
+ * Return: Void
+ */
+
+void print_unsigned_int(va_list args)
+{
+	unsigned int num = va_arg(args, unsigned int);
+        int rev = 0, count = 0;
+
+        if (num == 0)
+        {
+                _putchar('0');
+                return;
+        }
+
+        while (num != 0)
+        {
+                rev = (rev * 10) + (num % 10);
+                num /= 10;
+                count++;
+        }
+
+        while (rev != 0)
+        {
+                _putchar((rev % 10) + '0');
+                rev /= 10;
+                count--;
+        }
+
+        while (count > 0)
+        {
+                _putchar('0');
+                count--;
+        }
+}
+
+/**
  * print_string - Print the string
  *
  * @args: The arguments
@@ -94,7 +139,21 @@ void print_string(va_list args)
  * Return: Void
  */
 
-void print_char(va_list args, char *str, int *index)
+void print_char(va_list args)
 {
 	_putchar(va_arg(args, int));
+}
+
+/**
+ * print_percent - Print the char '%'
+ *
+ * @args: The arguments
+ *
+ * Return: Void
+ */
+
+void print_percent(va_list args)
+{
+	(void)args;
+        _putchar('%');
 }
