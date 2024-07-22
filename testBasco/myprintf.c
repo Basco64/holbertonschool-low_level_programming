@@ -3,6 +3,24 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
+/*
+ * o p
+*/
+
+specifierType specifiers[] = {
+	{'d', print_int},
+	{'u', print_unsigned_int},
+	{'i', print_int},
+	{'c', print_char},
+	{'s', print_string},
+	{'x', print_hexa_mini},
+	{'X', print_hexa_maxi},
+	{'o', print_octal},
+	{'p', print_address},
+	{'%', print_percent},
+	{'\0', NULL}
+};
+
 /**
  * _printf - My printf
  *
@@ -31,7 +49,7 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
-			
+
 			if (specifiers[j].letter == '\0')
 			{
 				_putchar('%');
