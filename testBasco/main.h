@@ -2,6 +2,7 @@
 #define MAIN_H
 
 #include <stdarg.h>
+#include <unistd.h>
 
 /**
  * specifier_func - Type for function pointers taking 'va_list' as argument
@@ -31,7 +32,8 @@ typedef struct specifier
 
 extern specifierType specifiers[];
 
-int printcequejetedis(const char *str, ...);
+int _putchar(char c);
+int _printf(const char *format, ...);
 void print_int(va_list args);
 void print_string(va_list args);
 void print_char(va_list args);

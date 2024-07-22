@@ -4,29 +4,29 @@
 #include <stdarg.h>
 
 /**
- * printcequejetedis - My printf
+ * _printf - My printf
  *
- * @str: The string
+ * @format: Pointer to the formated string
  * @...: Number of arguments undefined
  *
  * Return: 0
 */
 
-int printcequejetedis(const char *str, ...)
+int _printf(const char *format, ...)
 {
 	int i, j, count = 0;
 	va_list args;
 
-	va_start(args, str);
+	va_start(args, format);
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (str[i] == '%' && str[i + 1] != '\0')
+		if (format[i] == '%' && format[i + 1] != '\0')
 		{
 			i++;
 			for (j = 0; specifiers[j].letter != '\0'; j++)
 			{
-				if (str[i] == specifiers[j].letter)
+				if (format[i] == specifiers[j].letter)
 				{
 					specifiers[j].function(args);
 					break;
@@ -34,9 +34,9 @@ int printcequejetedis(const char *str, ...)
 			}
 			
 			if (specifiers[j].letter == '\0')
-				printcequejetedis("Not implemented yet");
+				_printf("Not implemented yet");
 		} else
-			putchar(str[i]);
+			_putchar(format[i]);
 		count++;
 	}
 	va_end(args);

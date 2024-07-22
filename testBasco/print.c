@@ -7,8 +7,22 @@ specifierType specifiers[] = {
 	{'i', print_int},
 	{'c', print_char},
 	{'s', print_string},
+	{'%', print_char},
 	{'\0', NULL}
 };
+
+/**
+ * _putchar - Print the char
+ *
+ * @c: The char
+ *
+ * Return: Void
+ */
+
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
 
 /**
  * print_int - Print the numbers
@@ -25,13 +39,13 @@ void print_int(va_list args)
 
 	if (num == 0)
 	{
-		putchar('0');
+		_putchar('0');
 		return;
 	}
 
 	if (num < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		num = -num;
 	}
 
@@ -44,14 +58,14 @@ void print_int(va_list args)
 
 	while (rev != 0)
 	{
-		putchar((rev % 10) + '0');
+		_putchar((rev % 10) + '0');
 		rev /= 10;
 		count--;
 	}
 
 	while (count > 0)
 	{
-		putchar('0');
+		_putchar('0');
 		count--;
 	}
 }
@@ -69,7 +83,7 @@ void print_string(va_list args)
 	char *str = va_arg(args, char*);
 
 	while (*str)
-		putchar(*str++);
+		_putchar(*str++);
 }
 
 /**
@@ -82,7 +96,5 @@ void print_string(va_list args)
 
 void print_char(va_list args)
 {
-	int c = va_arg(args, int);
-
-	putchar(c);
+	_putchar(va_arg(args, int));
 }
