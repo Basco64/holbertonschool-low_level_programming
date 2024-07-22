@@ -14,11 +14,11 @@
 
 int _printf(const char *format, ...)
 {
-	int i, j, count = 0;
+	char *result;
+	int i, j, k = 0, count = 0, len = 0;
 	va_list args;
 
 	va_start(args, format);
-
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%' && format[i + 1] != '\0')
@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 			{
 				if (format[i] == specifiers[j].letter)
 				{
-					specifiers[j].function(args);
+					specifiers[j].function(args, result, &k);
 					break;
 				}
 			}
@@ -40,5 +40,8 @@ int _printf(const char *format, ...)
 		count++;
 	}
 	va_end(args);
+
+	write(1, result, len);
+	free(result);
 	return (count);
 }

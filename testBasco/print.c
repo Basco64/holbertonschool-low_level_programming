@@ -32,7 +32,7 @@ int _putchar(char c)
  * Return: Void
  */
 
-void print_int(va_list args)
+void print_int(va_list args, char *str, int *index)
 {
 	int num = va_arg(args, int);
 	int rev = 0, count = 0;
@@ -94,7 +94,7 @@ void print_string(va_list args)
  * Return: Void
  */
 
-void print_char(va_list args)
+void print_char(va_list args, char *str, int *index)
 {
 	_putchar(va_arg(args, int));
 }

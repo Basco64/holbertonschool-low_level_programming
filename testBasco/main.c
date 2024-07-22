@@ -26,7 +26,7 @@ int main(void)
 	addr = (void *)0x7ffe637541f0;
 
 	_printf("Je vais manger %d %s.\n", num, article);
-	_printf("La lettre %c est la première lettre de l'alpabet", minu);
+	_printf("La lettre %c est la première lettre de l'alhabet", minu);
 	_printf(", elle existe aussi en mmajuscule : %c .\n", maju);
 	_printf("%u est un nombre non signe.\n�", num);
 	_printf("%i est un nombre signe.\n", num2);

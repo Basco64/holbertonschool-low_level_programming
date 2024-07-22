@@ -8,7 +8,7 @@
  * specifier_func - Type for function pointers taking 'va_list' as argument
  */
 
-typedef void (*specifier_function)(va_list args);
+typedef void (*specifier_function)(va_list args, char *format, int* index);
 
 
 /**
