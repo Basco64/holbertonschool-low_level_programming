@@ -39,10 +39,52 @@ To compile and run these programs, you'll need a C compiler (e.g. gcc).
 ## Compiling and executing
 
 To compile and execute this program, use the following command:
-
+```bash
+git clone https://github.com/Basco64/holbertonschool-low_level_programming.git
+```
+```
+cd holbertonschool-low_level_programming/testBasco
+```
 ```
 gcc *.c -o prog && ./prog
 ```
+
+## Examples
+
+Displaying a string : 
+
+Source code :
+```c
+
+int main() {
+    printf("String:[%s]\n", "I am a string !");
+    return 0;
+}
+```
+
+Sortie attendue :
+
+```
+String:[I am a string !]
+```
+
+Several tests are performed in the **main.c** file, but you can have fun performing many more like that:
+
+```c
+#include "main.h
+
+int main() {
+    int num = 5;
+    char* str = "cumulonimbus";
+
+    printf("I see %d %s in the sky !", num, str);
+
+    return 0;
+}
+```
+
+
+
 
 ## Author
 
