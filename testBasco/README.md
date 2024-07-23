@@ -34,10 +34,11 @@ Ce repertoire contient mon interpretation de la commande printf.
 
 ## Prerequis
 
-Pour compiler et executer ces programmes, vous aurez besoin d'u  n compilateur C (gcc par exemple)
+Pour compiler et executer ces programmes, vous aurez besoin d'un compilateur C (gcc par exemple)
 
-##Compilation et Execution
- Pour compiler un programme specifique, utilisez la commande suivante :
+## Compilation et Execution
+
+Pour compiler ce programme, utilisez la commande suivante :
 
 ```
 gcc *.c -o prog
@@ -54,7 +55,7 @@ Puis, pour executer le programme :
 Ce projet a ete realise par Basco64 dans le cadre de l'ecole Holberton.
 
 
-##Licence
+## Licence
 
 Ce projet est sous licence MIT.
 
