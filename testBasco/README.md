@@ -33,9 +33,7 @@ This directory contains my interpretation of the printf command.
 **main.c** : My tests.
 
 ## Flowchart
-
 ![Flowchart de mon printf](./flowchart.png "Flowchart").
-
 ## Prerequisites
 
 To compile and run these programs, you'll need a C compiler (e.g. gcc).
