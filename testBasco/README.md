@@ -59,6 +59,7 @@ Displaying a string :
 
 Source code :
 ```c
+#include "main.h"
 
 int main() {
     _printf("String:[%s]\n", "I am a string !");
