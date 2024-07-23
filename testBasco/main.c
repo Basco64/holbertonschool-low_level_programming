@@ -88,5 +88,16 @@ int main(void)
 
         printf("\nlen = %d, len2 = %d\n", len, len2);
 
+
+
+	len = _printf("");
+	printf("\n");
+	len2 = printf("");
+	printf("\n");
+	_printf("%d", len);
+	printf("\n");
+	printf("%d", len);
+	printf("\n");
+
 	return (0);
 }

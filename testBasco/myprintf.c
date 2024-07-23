@@ -52,7 +52,7 @@ int _printf(const char *format, ...)
 		} else
 		{
 			_putchar(format[i]);
-			count ++;
+			count++;
 		}
 	}
 	va_end(args);
