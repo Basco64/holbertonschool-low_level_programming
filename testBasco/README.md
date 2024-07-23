@@ -57,7 +57,7 @@ Source code :
 ```c
 
 int main() {
-    printf("String:[%s]\n", "I am a string !");
+    _printf("String:[%s]\n", "I am a string !");
     return 0;
 }
 ```
@@ -78,7 +78,7 @@ int main() {
     char* str = "cumulonimbus";
     char* adjective = "magnificient";
 
-    printf("I see %d %s %s in the sky !", num, adjective, str);
+    _printf("I see %d %s %s in the sky !", num, adjective, str);
 
     return 0;
 }
