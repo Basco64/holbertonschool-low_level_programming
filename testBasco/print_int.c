@@ -4,24 +4,27 @@
  * print_int - Print the numbers
  *
  * @args: The arguments
+ * @count: The counter
  *
  * Return: Void
  */
 
-void print_int(va_list args)
+void print_int(va_list args, int *count)
 {
 	int num = va_arg(args, int);
-	int rev = 0, count = 0;
+	int rev = 0, cmpt = 0;
 
 	if (num == 0)
 	{
 		_putchar('0');
+		*count += 1;
 		return;
 	}
 
 	if (num < 0)
 	{
 		_putchar('-');
+		*count += 1;
 		num = -num;
 	}
 
@@ -29,19 +32,21 @@ void print_int(va_list args)
 	{
 		rev = (rev * 10) + (num % 10);
 		num /= 10;
-		count++;
+		cmpt++;
 	}
 
 	while (rev != 0)
 	{
 		_putchar((rev % 10) + '0');
+		*count += 1;
 		rev /= 10;
-		count--;
+		cmpt--;
 	}
 
-	while (count > 0)
+	while (cmpt > 0)
 	{
 		_putchar('0');
-		count--;
+		*count += 1;
+		cmpt--;
 	}
 }

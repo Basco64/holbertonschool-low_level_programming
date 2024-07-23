@@ -4,11 +4,12 @@
  * print_address - Print the adress
  *
  * @args: The argument
+ * @count: The counter
  *
  * Return: Void
  */
 
-void print_address(va_list args)
+void print_address(va_list args, int *count)
 {
 	void *addr = va_arg(args, void*);
 	unsigned long address = (unsigned long)addr;
@@ -17,6 +18,7 @@ void print_address(va_list args)
 	if (address == 0)
 	{
 		_putchar('0');
+		*count += 1;
 		return;
 	}
 
@@ -26,6 +28,7 @@ void print_address(va_list args)
 
 	_putchar('0');
 	_putchar('x');
+	 *count += 2;
 
 	while (divisor > 0)
 	{
@@ -36,6 +39,7 @@ void print_address(va_list args)
 		else
 			_putchar(hexa - 10 + 'a');
 
+		*count += 1;
 		address %= divisor;
 		divisor /= 16;
 	}

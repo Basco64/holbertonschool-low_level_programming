@@ -1,25 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
-
-/*
- * o p
-*/
-
-specifierType specifiers[] = {
-	{'d', print_int},
-	{'u', print_unsigned_int},
-	{'i', print_int},
-	{'c', print_char},
-	{'s', print_string},
-	{'x', print_hexa_mini},
-	{'X', print_hexa_maxi},
-	{'o', print_octal},
-	{'p', print_address},
-	{'%', print_percent},
-	{'\0', NULL}
-};
 
 /**
  * _printf - My printf
@@ -32,6 +11,20 @@ specifierType specifiers[] = {
 
 int _printf(const char *format, ...)
 {
+	specifierType specifiers[] = {
+		{'d', print_int},
+		{'u', print_unsigned_int},
+		{'i', print_int},
+		{'c', print_char},
+		{'s', print_string},
+		{'x', print_hexa_mini},
+		{'X', print_hexa_maxi},
+		{'o', print_octal},
+		{'p', print_address},
+		{'%', print_percent},
+		{'\0', NULL}
+	};
+
 	int i, j, count = 0;
 	va_list args;
 
@@ -45,7 +38,7 @@ int _printf(const char *format, ...)
 			{
 				if (format[i] == specifiers[j].letter)
 				{
-					specifiers[j].function(args);
+					specifiers[j].function(args, &count);
 					break;
 				}
 			}
@@ -54,10 +47,13 @@ int _printf(const char *format, ...)
 			{
 				_putchar('%');
 				_putchar(format[i]);
+				count += 2;
 			}
 		} else
+		{
 			_putchar(format[i]);
-		count++;
+			count ++;
+		}
 	}
 	va_end(args);
 	return (count);

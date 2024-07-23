@@ -5,11 +5,12 @@
  * (not preceded by a 0)
  *
  * @args: The argument
+ * @count: The counter
  *
  * Return: Void
  */
 
-void print_octal(va_list args)
+void print_octal(va_list args, int *count)
 {
 	unsigned int num = va_arg(args, unsigned int);
 	unsigned int divisor = 1, octal;
@@ -17,6 +18,7 @@ void print_octal(va_list args)
 	if (num == 0)
 	{
 		_putchar('0');
+		*count += 1;
 		return;
 	}
 
@@ -27,6 +29,7 @@ void print_octal(va_list args)
 	{
 		octal = (num / divisor) % 8;
 		_putchar(octal + '0');
+		*count += 1;
 		divisor /= 8;
 
 	}
