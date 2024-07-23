@@ -34,7 +34,7 @@ This directory contains my interpretation of the printf command.
 
 ## Flowchart
 
-![Flowchart de mon printf](./flowchart.png "Flowchart").
+![Flowchart de mon printf](./flowchart1.png "Flowchart").
 
 ## Prerequisites
 
