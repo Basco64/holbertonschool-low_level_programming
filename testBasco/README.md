@@ -62,7 +62,7 @@ int main() {
 }
 ```
 
-Sortie attendue :
+Expected release:
 
 ```
 String:[I am a string !]
@@ -71,19 +71,24 @@ String:[I am a string !]
 Several tests are performed in the **main.c** file, but you can have fun performing many more like that:
 
 ```c
-#include "main.h
+#include "main.h"
 
 int main() {
     int num = 5;
     char* str = "cumulonimbus";
+    char* adjective = "magnificient";
 
-    printf("I see %d %s in the sky !", num, str);
+    printf("I see %d %s %s in the sky !", num, adjective, str);
 
     return 0;
 }
 ```
 
+Expected release:
 
+```
+I see 5 magnificent cumulonimbus in the sky !
+```
 
 
 ## Author
