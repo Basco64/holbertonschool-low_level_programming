@@ -1,63 +1,57 @@
 # BascoPrintf
 
-Ce repertoire contient mon interpretation de la commande printf.
+This directory contains my interpretation of the printf command.
 
 ## Contenu
 
-**main.h** : Fichier header qui lie tout les fichiers entre eux.
+**main.h** : Header file linking all files together.
 
-**_putchar.c** : Ecrit les caracteres dans la sortie standard.
+**myprintf.c** : Main trunk of my printf function.
 
-**myprintf.c** : Tronc principal de ma fonction printf.
+**_putchar.c** : Writes characters to standard output.
 
-**print_address.c** : Imprime les adresses.
+**print_address.c** : Prints addresses..
 
-**print_char.c** : Imprime les caracteres.
+**print_char.c** : Prints characters.
 
-**print_hexa_maxi.c** : Imprime les nombres en hexadecimal et en majuscules.
+**print_hexa_maxi.c** : Prints numbers in hexadecimal and uppercase.
 
-**print_hexa_mini.c** : Imprime les nombres en hexadecimal et en minuscules.
+**print_hexa_mini.c** : Prints numbers in hexadecimal and lowercase.
 
-**print_int.c** : Imprime les chiffres.
+**print_int.c** : Prints digits.
 
-**print_octal.c** : Imprime en valeur octal.
+**print_octal.c** : Prints octal values.
 
-**print_percent.c** : Imprime le symbole '%'.
+**print_percent.c** : Prints the '%' symbol.
 
-**print_string.c** : Imprime les chaines de caracateres.
+**print_unsigned_int.c** : Prints unsigned digits.
 
-**print_unsigned_int.c** : Imprime les chiffres non signee.
+**print_string.c** : Prints strings.
 
-**README.md** : Ce fichier.
+**README.md** : You are currently reading it.
 
-**main.c** : Mes tests.
+**main.c** : My tests.
 
-## Prerequis
+## Prerequisites
 
-Pour compiler et executer ces programmes, vous aurez besoin d'un compilateur C (gcc par exemple)
+To compile and run these programs, you'll need a C compiler (e.g. gcc).
 
-## Compilation et Execution
+## Compiling and executing
 
-Pour compiler ce programme, utilisez la commande suivante :
-
-```
-gcc *.c -o prog
-```
-
-Puis, pour executer le programme :
+To compile and execute this program, use the following command:
 
 ```
-./prog
+gcc *.c -o prog && ./prog
 ```
 
-## Auteur
+## Author
 
-Ce projet a ete realise par Basco64 dans le cadre de l'ecole Holberton.
+This project was created by Basco64 for the Holberton School.
 
 
-## Licence
+## License
 
-Ce projet est sous licence MIT.
+This project is licensed under the MIT license.
 
-## Remerciements
-Merci a Holberton School pour leur soutien et leurs ressources pedagogiques.
+## Acknowledgements
+Thanks to Holberton School for their support.
