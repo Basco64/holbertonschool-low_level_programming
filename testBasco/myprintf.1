@@ -1,0 +1,46 @@
+.TH MYPRINTF "juillet 2024" "Version 1.0" "Library Functions"
+
+.SH NAME
+myprintf \- Fonction de formatage et d'affichage
+
+.SH SYNOPSIS
+.B int myprintf(const char *format, ...);
+
+.SH DESCRIPTION
+\`myprintf\` est une fonction qui formatte et affiche des données selon un format spécifié. Elle fonctionne de manière similaire à \`printf\`, mais ne supporte que les spécificateurs de format suivants :
+.TP
+.B %c
+Affiche un caractère.
+.TP
+.B %s
+Affiche une chaîne de caractères.
+.TP
+.B %d, %i
+Affiche un entier sous forme décimale.
+.TP
+.B %%
+Affiche le symbole de pourcentage.
+
+.SH RETURN VALUE
+La fonction \`myprintf\` retourne le nombre de caractères affichés, ou une valeur négative en cas d'erreur.
+
+.SH EXAMPLES
+Voici quelques exemples d'utilisation de \`myprintf\` :
+.TP
+.B myprintf("Caractère : %c\n", 'A');
+Affiche "Caractère : A".
+.TP
+.B myprintf("Chaîne : %s\n", "Hello");
+Affiche "Chaîne : Hello".
+.TP
+.B myprintf("Nombre : %d\n", 123);
+Affiche "Nombre : 123".
+.TP
+.B myprintf("Nombre : %i\n", 456);
+Affiche "Nombre : 456".
+.TP
+.B myprintf("Pourcent : %%\n");
+Affiche "Nombre : 123".
+
+.SH AUTHOR
+Basco <test@email.com>
