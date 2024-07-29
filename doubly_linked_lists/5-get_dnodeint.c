@@ -2,7 +2,7 @@
 
 /**
  *get_dnodeint_at_index - Function that returns the nth node
- of a dlistint_t linked list
+ *of a dlistint_t linked list
  *
  * @head: Pointer to head of the linked list
  * @index: Index of the node
