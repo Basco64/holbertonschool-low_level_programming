@@ -2,14 +2,18 @@
 
 /**
  * error_exit - Print error message and exit
+ *
  * @code: Exit code
  * @message: Error message
  * @file: File name
+ *
+ * Return: Nothing
  */
+
 void error_exit(int code, const char *message, const char *file)
 {
-    dprintf(STDERR_FILENO, message, file);
-    exit(code);
+	dprintf(STDERR_FILENO, message, file);
+	exit(code);
 }
 
 /**
@@ -19,7 +23,7 @@ void error_exit(int code, const char *message, const char *file)
  * @argc: Argument count
  * @argv: Arguments Values (Array of String)
  *
- * Return: Nothing
+ * Return: 0 if success
  */
 
 int main(int argc, char **argv)
