@@ -1,6 +1,18 @@
 #include "main.h"
 
 /**
+ * error_exit - Print error message and exit
+ * @code: Exit code
+ * @message: Error message
+ * @file: File name
+ */
+void error_exit(int code, const char *message, const char *file)
+{
+    dprintf(STDERR_FILENO, message, file);
+    exit(code);
+}
+
+/**
  * main - Program that copies the content of a
  * file to another file
  *
@@ -12,39 +24,32 @@
 
 int main(int argc, char **argv)
 {
-	ssize_t from, to, from_source, to_dest;
+	int from, to;
+	ssize_t readed;
 	char buffer[1024];
 
 	if (argc != 3)
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
+		error_exit(97, "Usage: cp file_from file_to\n", "");
 
 	from = open(argv[1], O_RDONLY);
 	if (from == -1)
-		dprintf(STDERR_FILENO,
-				"Error: Can't read from file %s\n", argv[1]), exit(98);
+		error_exit(98, "Error: Can't read from file %s\n", argv[1]);
 
 	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (to == -1)
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
+		error_exit(99, "Error: Can't write to %s\n", argv[2]);
 
-	from_source = 1024;
-	while (from_source == 1024)
+	while ((readed = read(from, buffer, 1024)) > 0)
 	{
-		from_source = read(from, buffer, 1024);
-		if (from_source == -1)
-			dprintf(STDERR_FILENO,
-					"Error: Can't read from file %s\n", argv[1]), exit(98);
-
-		to_dest = write(to, buffer, from_source);
-		if (to_dest == -1 || from_source != to_dest)
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
+		if (write(to, buffer, readed) != readed)
+			error_exit(99, "Error: Can't write to %s\n", argv[2]);
 	}
 
 	if (close(from) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %ld\n", from), exit(100);
+		error_exit(100, "Error: Can't close fd %d\n", argv[1]);
 
 	if (close(to) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %ld\n", to), exit(100);
+		error_exit(100, "Error: Can't close fd %d\n", argv[2]);
 
 	return (0);
 }
