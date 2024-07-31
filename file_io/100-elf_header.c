@@ -49,7 +49,7 @@ void print_magic(Elf64_Ehdr *header)
 
 void print_class(Elf64_Ehdr *header)
 {
-	printf("  Class:\t\t\t\t");
+	printf("%-37s","  Class:");
 
 	switch (header->e_ident[EI_CLASS])
 	{
@@ -75,7 +75,7 @@ void print_class(Elf64_Ehdr *header)
 
 void print_data(Elf64_Ehdr *header)
 {
-	printf("  Data: \t\t\t\t");
+	printf("%-37s", "  Data:");
 	switch (header->e_ident[EI_DATA])
 	{
 		case ELFDATANONE:
@@ -100,7 +100,7 @@ void print_data(Elf64_Ehdr *header)
 
 void print_version(Elf64_Ehdr *header)
 {
-	printf("  Version: \t\t\t\t");
+	printf("%-37s", "  Version:");
 
 	switch (header->e_ident[EI_VERSION])
 	{
@@ -123,14 +123,9 @@ void print_version(Elf64_Ehdr *header)
 
 void print_os_abi(Elf64_Ehdr *header)
 {
-	printf("  OS/ABI:\t\t\t\t");
+	printf("%-37s", "  OS/ABI:");
 	switch (header->e_ident[EI_OSABI])
 	{
-		/**
-		 * case ELFOSABI_NONE:
-		 * printf("UNIX - System V\n");
-		 * break;
-		 */
 		case ELFOSABI_SYSV:
 			printf("UNIX - System V\n");
 			break;
@@ -162,7 +157,7 @@ void print_os_abi(Elf64_Ehdr *header)
 			printf("Standalone App\n");
 			break;
 		default:
-			printf("<unknown: %d>\n", header->e_ident[EI_OSABI]);
+			printf("<unknown: %d", header->e_ident[EI_OSABI]);
 	}
 }
 
@@ -176,7 +171,7 @@ void print_os_abi(Elf64_Ehdr *header)
 
 void print_abi_version(Elf64_Ehdr *header)
 {
-	printf("  ABI Version:\t\t\t\t");
+	printf("%-37s", "  ABI Version:");
 	printf("%d\n", header->e_ident[EI_ABIVERSION]);
 }
 
@@ -190,7 +185,7 @@ void print_abi_version(Elf64_Ehdr *header)
 
 void print_type(Elf64_Ehdr *header)
 {
-	printf("  Type:\t\t\t\t\t");
+	printf("%-37s", "  Type:");
 
 	switch (header->e_type)
 	{
@@ -223,9 +218,12 @@ void print_type(Elf64_Ehdr *header)
 
 void print_entry_adress(Elf64_Ehdr *header)
 {
-	printf("  Entry point address:\t\t\t");
+    printf("%-37s", "  Entry point address:");
 
-	printf("%#x\n", (unsigned int)header->e_entry);
+    if (header->e_ident[EI_CLASS] == ELFCLASS32)
+        printf("0x%x\n", (unsigned int)header->e_entry);
+    else
+        printf("0x%lx\n", header->e_entry);
 }
 
 /**
