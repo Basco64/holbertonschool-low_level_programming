@@ -49,7 +49,7 @@ void print_magic(Elf64_Ehdr *header)
 
 void print_class(Elf64_Ehdr *header)
 {
-	printf("  Class:\t\t\t\t\t");
+	printf("  Class:\t\t\t\t");
 
 	switch (header->e_ident[EI_CLASS])
 	{
@@ -92,7 +92,7 @@ void print_data(Elf64_Ehdr *header)
 
 /**
  * print_version - Print version of an ELF header
- * 
+ *
  * @header: Pointer to the ELF header file
  *
  * Return: Nothing
@@ -100,7 +100,7 @@ void print_data(Elf64_Ehdr *header)
 
 void print_version(Elf64_Ehdr *header)
 {
-        printf("  Version: \t\t\t\t\t");
+	printf("  Version: \t\t\t\t");
 
 	switch (header->e_ident[EI_VERSION])
 	{
@@ -123,8 +123,7 @@ void print_version(Elf64_Ehdr *header)
 
 void print_os_abi(Elf64_Ehdr *header)
 {
-	printf("  OS/ABI:\t\t\t\t\t");
-
+	printf("  OS/ABI:\t\t\t\t");
 	switch (header->e_ident[EI_OSABI])
 	{
 		/**
@@ -178,8 +177,7 @@ void print_os_abi(Elf64_Ehdr *header)
 void print_abi_version(Elf64_Ehdr *header)
 {
 	printf("  ABI Version:\t\t\t\t");
-
-        printf("%d\n", header->e_ident[EI_ABIVERSION]);
+	printf("%d\n", header->e_ident[EI_ABIVERSION]);
 }
 
 /**
@@ -194,7 +192,7 @@ void print_type(Elf64_Ehdr *header)
 {
 	printf("  Type:\t\t\t\t\t");
 
-        switch (header->e_type)
+	switch (header->e_type)
 	{
 		case ET_NONE:
 			printf("NONE (Unknown type)\n");
@@ -215,7 +213,7 @@ void print_type(Elf64_Ehdr *header)
 }
 
 /**
- * print_entry_adress - Print the entry point address 
+ * print_entry_adress - Print the entry point address
  * of an ELF header
  *
  * @header: Pointer to the ELF header file
@@ -225,9 +223,32 @@ void print_type(Elf64_Ehdr *header)
 
 void print_entry_adress(Elf64_Ehdr *header)
 {
-	printf("  Entry point address:\t\t\t\t\t");
+	printf("  Entry point address:\t\t\t");
 
-	printf("0x%lx\n",(unsigned long)header->e_entry);
+	printf("%#x\n", (unsigned int)header->e_entry);
+}
+
+/**
+ * verifile - File type check
+ *
+ * @header: Pointer to the ELF header file
+ *
+ * Return: Nothing
+ */
+
+void verifile(Elf64_Ehdr *header)
+{
+	int i;
+
+	for (i = 0; i < 4; i++)
+	{
+		if (header->e_ident[i] != 127 &&
+			header->e_ident[i] != 'E' &&
+			header->e_ident[i] != 'L' &&
+			header->e_ident[i] != 'F')
+
+			error_exit(98, "Error: Not an ELF file\n", "");
+	}
 }
 
 /**
@@ -250,13 +271,13 @@ int main(int argc, char **argv)
 
 	elfile = open(argv[1], O_RDONLY);
 	if (elfile == -1)
-		error_exit(98, "Can't read from file %s\n", argv[1]);
+		error_exit(98, "Error: Can't read from file %s\n", argv[1]);
 
 	headerFile = malloc(sizeof(Elf64_Ehdr));
 	if (headerFile == NULL)
 	{
 		close(elfile);
-		error_exit(98, "The memory allocation has failed\n", "");
+		error_exit(98, "Error: The memory allocation has failed\n", "");
 	}
 
 	reader = read(elfile, headerFile, sizeof(Elf64_Ehdr));
@@ -267,6 +288,7 @@ int main(int argc, char **argv)
 		error_exit(98, "Error: Can't read from file %s\n", argv[2]);
 	}
 
+	verifile(headerFile);
 	print_magic(headerFile);
 	print_class(headerFile);
 	print_data(headerFile);
