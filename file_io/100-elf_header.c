@@ -268,7 +268,8 @@ void verifile(Elf64_Ehdr *header)
 
 int main(int argc, char **argv)
 {
-	int elfile, reader;
+	int elfile;
+	ssize_t reader;
 	Elf64_Ehdr *headerFile;
 
 	if (argc != 2)
@@ -294,6 +295,7 @@ int main(int argc, char **argv)
 	}
 
 	verifile(headerFile);
+
 	print_magic(headerFile);
 	print_class(headerFile);
 	print_data(headerFile);
@@ -304,6 +306,7 @@ int main(int argc, char **argv)
 	print_entry_adress(headerFile);
 
 	free(headerFile);
+
 	if (close(elfile) == -1)
 		error_exit(98, "Error: Can't close fd %d\n", argv[1]);
 
