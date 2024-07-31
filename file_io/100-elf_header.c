@@ -285,7 +285,7 @@ int main(int argc, char **argv)
 	{
 		free(headerFile);
 		close(elfile);
-		error_exit(98, "Error: Can't read from file %s\n", argv[2]);
+		error_exit(98, "Error: Can't read from file %s\n", argv[1]);
 	}
 
 	verifile(headerFile);
