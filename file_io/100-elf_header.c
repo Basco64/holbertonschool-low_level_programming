@@ -296,6 +296,7 @@ int main(int argc, char **argv)
 
 	verifile(headerFile);
 
+	printf("ELF Header:\n");
 	print_magic(headerFile);
 	print_class(headerFile);
 	print_data(headerFile);
