@@ -52,12 +52,10 @@ int main(int argc, char **argv)
 	if (readed == -1)
 		error_exit(98, "Error: Can't read from file %s\n", argv[1]);
 
-	checkClose = close(from);
-	if (checkClose == -1)
+	if (close(from) == -1)
 		error_exit(100, "Error: Can't close fd %d\n", argv[1]);
 
-	checkClose = close(to);
-	if (checkClose == -1)
+	if (close(to) == -1)
 		error_exit(100, "Error: Can't close fd %d\n", argv[2]);
 
 	return (0);
