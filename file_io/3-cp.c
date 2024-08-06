@@ -28,7 +28,7 @@ void error_exit(int code, const char *message, const char *file)
 
 int main(int argc, char **argv)
 {
-	int from, to,checkClose;
+	int from, to;
 	ssize_t readed;
 	char buffer[1024];
 
