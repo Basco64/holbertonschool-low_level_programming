@@ -10,5 +10,5 @@ int main(void)
 	if (execve(argv[0], argv, NULL) == -1)
 		perror("Error:");
 
-	return 0;
+	return (0);
 }
